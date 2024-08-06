@@ -1,0 +1,25 @@
+@import './normalize';
+
+* {
+  font-family: "Rubik", sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23.4px;
+  font-style: normal;
+}
+
+body {
+  header {
+    display: flex;    
+    width: 100%;
+    font-weight: 700;
+    font-size: 28px;
+    padding: 36px;
+    border-bottom: solid 1px black;
+  }
+
+  .main {
+    display: flex;
+    height: calc(100vh - 96px);
+  }
+}
