@@ -1,8 +1,12 @@
 import React from 'react';
-import TaskTreeItem from '../';
+import TaskTreeItem from '../TaskTreeItem';
 import styles from './TaskTree.module.scss';
 const TaskTree = () => {
-  return <div className={styles.TaskTree}>{/* <TaskTreeItem /> */}</div>;
+  return (
+    <div className={styles.taskTree}>
+      <TaskTreeItem />
+    </div>
+  );
 };
 
 export default TaskTree;
