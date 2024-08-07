@@ -3,7 +3,7 @@ import { observer } from 'mobx-react-lite';
 
 import styles from './Modal.module.scss';
 
-import MainStore from '../../store/MainStore';
+import mainStore from '../../store/MainStore';
 
 import Btn from '../Btn';
 import Input from '../Input';
@@ -20,13 +20,13 @@ const Modal: FunctionComponent<ModalProps> = observer(({ children, modalToggler 
       <div className={`${styles.flexColumn} ${styles.controls}`}>
         <div className={styles.flexColumn}>
           <Input
-            value={MainStore.TaskTitle}
-            onChange={(e) => MainStore.titleHandler(e.target.value)}
+            value={mainStore.taskTitle}
+            onChange={(e) => mainStore.titleHandler(e.target.value)}
             placeholder="Название задачи..."
           />
           <TextArea
-            value={MainStore.TaskText}
-            onChange={(e) => MainStore.textHandler(e.target.value)}
+            value={mainStore.taskText}
+            onChange={(e) => mainStore.textHandler(e.target.value)}
             placeholder="Содержимое задачи..."
           />
         </div>
