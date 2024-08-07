@@ -1,0 +1,31 @@
+.header {
+  display: flex;    
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-weight: 700;
+  padding: 32px;
+  border-bottom: solid 1px black;
+
+  .btnsGroup {
+    margin-top: 12px;
+    justify-content: end;
+    .icon {
+      width: 36px;
+      height: 36px;
+      border: 1px solid ;
+      cursor: pointer;
+      padding: 4px;
+      border-radius: 10px;
+      
+      &:hover {
+        background-color: rgb(185, 185, 185);
+      }
+
+      &:active {
+        box-shadow: inset 1px 1px 5px rgba(black, .25);
+      }
+    }
+  }
+  
+}
