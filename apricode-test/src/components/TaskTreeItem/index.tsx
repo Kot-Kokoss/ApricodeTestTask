@@ -5,51 +5,56 @@ import arrow from '../../icon/icon_sloy.svg';
 import styles from './TaskTreeItem.module.scss';
 
 import { TaskType } from '../../types/types';
-import MainStore from '../../store/MainStore';
+import mainStore from '../../store/MainStore';
+
+import Modal from '../Modal';
+import Btn from '../Btn';
 
 type TaskTreeItemProps = {
   TaskTreeItem: TaskType;
-}
+};
 
-const TaskTreeItem: FunctionComponent<TaskTreeItemProps> = observer(() => {
-  const {id, title, isCompited, children} = TaskTreeItem;
-  const {isModalShown, setIsModalShown} = useState(false)
+const TaskTreeItem: FunctionComponent<TaskTreeItemProps> = observer(({ taskItem }) => {
+  const { id, title, isCompleted, children } = taskItem;
+  const [isModalShown, setIsModalShown] = useState(false);
   const [isChildrenShown, setIsChildrenShown] = useState(false);
 
-  function modaltoggler () {
-    setIsModalShown(prevModalState => !prevModalState)
+  function modalToggler() {
+    setIsModalShown((prevModalState) => !prevModalState);
   }
 
   function childrenToggler() {
-    setIsSubTasksShown(prevSubTasks => !prevSubTasks);
+    setIsChildrenShown((prevChildren) => !prevChildren);
   }
 
   return (
     <>
-      {
-        isModalShown && (
-          <Modal modalToggler={modalToggler}>
-            <Button
-              btnText='Добавить задачу'
-              onClick={() => MainStore.addChildren(id)}
-            />
-          </Modal>
-        )
-      }
+      {isModalShown && (
+        <Modal modalToggler={modalToggler}>
+          <Btn btnText="Добавить задачу" onClick={() => mainStore.addChildren(id)} />
+        </Modal>
+      )}
       <div className={`${styles.item} ${styles.parent}`}>
         <div className={styles.checkboxWrap}>
           <input
             type="checkbox"
             className={styles.customCheckbox}
-            name="checkbox_1"
-            id="checkbox_1"
-            checked={isActive}
-            onChange={() => }
+            name={id}
+            id={id}
+            checked={isCompleted}
+            onChange={() => mainStore.completeToggler(id)}
           />
-          <label htmlFor="checkbox_1"></label>
+          <label htmlFor={id}></label>
         </div>
-        <img className={styles.arrow} src={arrow} alt="" />
-        <div className={`${styles.title} ${styles.grand}`}>Задача 1</div>
+        <img
+          className={isChildrenShown ? `${styles.arrow} ${styles.active}` : styles.arrow}
+          src={arrow}
+          alt=""
+          onClick={childrenToggler}
+        />
+        <h3 className={`${styles.title} ${styles.grand}`} onClick={() => mainStore.chooseTask(id)}>
+          {title}
+        </h3>
       </div>
     </>
   );
