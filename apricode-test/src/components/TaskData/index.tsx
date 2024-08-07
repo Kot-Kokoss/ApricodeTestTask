@@ -1,18 +1,20 @@
 import React, { FunctionComponent } from 'react';
 import { observer } from 'mobx-react-lite';
 
-import MainStore from '../../store/MainStore';
+import mainStore from '../../store/MainStore';
 
 import styles from './TaskData.module.scss';
 
 const TaskData: FunctionComponent = observer(() => {
   return (
-    MainStore.activeTask && (
-      <div className={styles.taskInfo}>
-        <div className={styles.taskTitle}>{MainStore.activeTask.title}</div>
-        <p className={styles.text}>{MainStore.activeTask.text}</p>
-      </div>
-    )
+    <div className={styles.taskInfo}>
+      {mainStore.activeTask && (
+        <>
+          <h3 className={styles.taskTitle}>{mainStore.activeTask.title}</h3>
+          <p className={styles.text}>{mainStore.activeTask.text}</p>
+        </>
+      )}
+    </div>
   );
 });
 

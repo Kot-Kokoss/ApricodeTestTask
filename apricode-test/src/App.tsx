@@ -9,8 +9,8 @@ function App() {
     <>
       <header>Список задач</header>
       <div className="main">
-        {/* <TaskTree /> */}
-        {/* <TaskData /> */}
+        <TaskTree />
+        <TaskData />
       </div>
     </>
   );
