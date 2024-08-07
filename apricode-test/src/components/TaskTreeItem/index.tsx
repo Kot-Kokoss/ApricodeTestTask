@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { FunctionComponent } from 'react';
 import arrow from '../../icon/icon_sloy.svg';
 import styles from './TaskTreeItem.module.scss';
 
-const TaskTreeItem = () => {
+const TaskTreeItem: FunctionComponent = () => {
   return (
     <>
       <div className={`${styles.item} ${styles.parent}`}>
