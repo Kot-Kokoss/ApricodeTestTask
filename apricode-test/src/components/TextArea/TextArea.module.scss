@@ -1,0 +1,20 @@
+.input {
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  line-height: 2em;
+  padding: 0 .5em;
+  border: 1px solid black;
+  border-radius: 5px;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.textarea {
+  resize: none;
+  width: 100%;
+  max-width: 350px;
+  height: 7em;
+}

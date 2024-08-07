@@ -7,10 +7,12 @@ import styles from './TaskData.module.scss';
 
 const TaskData: FunctionComponent = observer(() => {
   return (
-    <div className={styles.taskInfo}>
-      <div className={styles.taskTitle}>{MainStore.activeTask.title}</div>
-      <p className={styles.text}>{MainStore.activeTask.text}</p>
-    </div>
+    MainStore.activeTask && (
+      <div className={styles.taskInfo}>
+        <div className={styles.taskTitle}>{MainStore.activeTask.title}</div>
+        <p className={styles.text}>{MainStore.activeTask.text}</p>
+      </div>
+    )
   );
 });
 

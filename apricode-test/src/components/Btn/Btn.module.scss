@@ -1,0 +1,21 @@
+.button {
+  cursor: pointer;
+  font-size: inherit;
+  letter-spacing: inherit;
+  color: black;
+  background-color: white;
+  line-height: 2em;
+  padding: 0 1em;
+  border: 1px solid black;
+  border-radius: 10px;
+  
+
+  &:hover {
+    color: black;
+    background-color: rgb(185, 185, 185);
+  }
+
+  &:active {
+    box-shadow: inset 1px 1px 5px rgba(black, .25);
+  }
+}
