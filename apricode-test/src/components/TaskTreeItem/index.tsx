@@ -13,7 +13,7 @@ import Modal from '../Modal';
 import Btn from '../Btn';
 
 type TaskTreeItemProps = {
-  TaskTreeItem: TaskType;
+  taskItem: TaskType;
 };
 
 const TaskTreeItem: FunctionComponent<TaskTreeItemProps> = observer(({ taskItem }) => {
