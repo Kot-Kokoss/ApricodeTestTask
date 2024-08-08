@@ -1,4 +1,4 @@
-import React, { FunctionComponent, useState } from 'react';
+import { FunctionComponent, useState } from 'react';
 import { observer } from 'mobx-react-lite';
 
 import arrow from '../../icon/icon_sloy.svg';

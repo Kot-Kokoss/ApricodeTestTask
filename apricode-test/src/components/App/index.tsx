@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import Header from '../Header';
 import TaskTree from '../TaskTree';
 import TaskData from '../TaskData';
@@ -19,7 +19,7 @@ function App() {
   return (
     <>
       <Header modalToggler={modalToggler} />
-      <div className={styles.main}>
+      <div className={`${styles.main} ${styles.nightTheme}`}>
         {isModalShown && (
           <Modal modalToggler={modalToggler}>
             <Btn btnText="Добавить задачу" onClick={() => mainStore.addTask()} />
